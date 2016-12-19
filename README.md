@@ -19,7 +19,7 @@ Additionally, this app also acts as a demo of [Retrofit2](https://github.com/squ
 
 **plugins** | **vers**
 --- | ---
-[retrolambda](https://github.com/evant/gradle-retrolambda) | 3.2.4
+[retrolambda](https://github.com/evant/gradle-retrolambda) | 3.4.0
 [android-apt](https://bitbucket.org/hvisser/android-apt) | 1.8
 
 
