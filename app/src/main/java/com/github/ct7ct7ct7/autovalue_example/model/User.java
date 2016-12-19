@@ -8,7 +8,7 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.SerializedName;
 
 @AutoValue
-public abstract class User implements Parcelable{
+public abstract class User implements Parcelable {
     @SerializedName("name")
     public abstract String userName();
 
@@ -18,8 +18,8 @@ public abstract class User implements Parcelable{
     @SerializedName("public_repos")
     public abstract int publicRepos();
 
-    public static User create(String userName,String webUrl,int publicRepos) {
-        return new AutoValue_User(userName,webUrl,publicRepos);
+    public static User create(String userName, String webUrl, int publicRepos) {
+        return new AutoValue_User(userName, webUrl, publicRepos);
     }
 
     public static TypeAdapter<User> typeAdapter(Gson gson) {

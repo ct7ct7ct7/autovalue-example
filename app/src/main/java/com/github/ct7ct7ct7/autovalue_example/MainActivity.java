@@ -1,10 +1,13 @@
 package com.github.ct7ct7ct7.autovalue_example;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.github.ct7ct7ct7.autovalue_example.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -47,8 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(user -> {
-                    String content = "Name : " + user.userName() + "\n\n" + "Web Url : " + user.webUrl();
-                    textView.setText(content);
+                    textView.setText(user.toString());
+                    gotoTwoActivity(user);
                 }, throwable -> textView.setText(throwable.getMessage()));
+    }
+
+    private void gotoTwoActivity(User user) {
+        Intent intent = TwoActivity.createIntent(this, user);
+        startActivity(intent);
     }
 }
